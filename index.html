@@ -31,6 +31,62 @@
                 </div>
             </div>
 
+            <!-- Search & Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" placeholder="Search tasks..." class="search-input">
+                        <button id="clearSearch" class="clear-search" title="Clear search">✕</button>
+                    </div>
+                </div>
+
+                <div class="filter-container">
+                    <div class="filter-section">
+                        <h3>Quick Filters:</h3>
+                        <div class="quick-filters">
+                            <button class="filter-btn active" data-filter="all">
+                                <span class="filter-icon">📋</span>
+                                All Tasks
+                            </button>
+                            <button class="filter-btn" data-filter="completed">
+                                <span class="filter-icon">✅</span>
+                                Completed
+                            </button>
+                            <button class="filter-btn" data-filter="pending">
+                                <span class="filter-icon">⏳</span>
+                                Pending
+                            </button>
+                            <button class="filter-btn" data-filter="recent">
+                                <span class="filter-icon">🆕</span>
+                                Recent
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="advanced-filters">
+                        <button id="toggleAdvanced" class="toggle-advanced">
+                            <span>Advanced Options</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div id="advancedPanel" class="advanced-panel">
+                            <div class="filter-group">
+                                <label>Sort by:</label>
+                                <select id="sortSelect" class="sort-select">
+                                    <option value="created-desc">Newest First</option>
+                                    <option value="created-asc">Oldest First</option>
+                                    <option value="alphabetical">Alphabetical</option>
+                                    <option value="completion">Completion Status</option>
+                                </select>
+                            </div>
+                            <div class="filter-actions">
+                                <button id="clearAllFilters" class="clear-filters-btn">Clear All Filters</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="tasks-section">
                 <div class="tasks-header">
                     <h2>Your Tasks</h2>
