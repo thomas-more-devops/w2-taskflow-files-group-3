@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-    <!-- COMMENTSSSS -->
 <body>
     <div class="container">
         <header class="header">
@@ -23,7 +22,13 @@
         <main class="main">
             <div class="task-input-section">
                 <div class="input-container">
-                    <input type="text" id="taskInput" placeholder="Enter your task here..." class="task-input">
+                    <input type="text" id="taskInput" placeholder="What needs to be done?" class="task-input">
+                    <div class="input-options">
+                        <div class="date-input-container">
+                            <label for="dueDateInput" class="date-label">Due:</label>
+                            <input type="date" id="dueDateInput" class="date-input">
+                        </div>
+                    </div>
                     <button id="addTaskBtn" class="add-btn">
                         <span class="add-icon">+</span>
                         Add Task
@@ -82,6 +87,19 @@
                     <div class="stat-card">
                         <span class="stat-number" id="pendingTasks">0</span>
                         <span class="stat-label">Pending</span>
+                    </div>
+                    <div class="stat-card overdue-stats">
+                        <span class="stat-number" id="overdueTasks">0</span>
+                        <span class="stat-label">Overdue</span>
+                    </div>
+                </div>
+
+                <div class="detailed-analytics">
+                    <div class="analytics-section">
+                        <h3>Due Date Overview</h3>
+                        <div id="dueDateStats" class="due-date-stats-list">
+                            <!-- Due date statistics will be populated here -->
+                        </div>
                     </div>
                 </div>
             </div>
