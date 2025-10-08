@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskFlow - Task Management App</title>
-    
-    <!-- Main CSS file -->
     <link rel="stylesheet" href="styles/main.css">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <!-- Header section -->
         <header class="header">
             <div class="header-content">
                 <h1 class="app-title">
@@ -23,24 +18,16 @@
                 <p class="app-subtitle">Streamline your productivity</p>
             </div>
         </header>
-        
+
         <main class="main">
             <div class="task-input-section">
                 <div class="input-container">
-                    <input type="text" id="taskInput" placeholder="What task would you like to add?" class="task-input">
+                    <input type="text" id="taskInput" placeholder="What needs to be done?" class="task-input">
                     <div class="input-options">
-                        <select id="prioritySelect" class="priority-select">
-                            <option value="medium">Medium Priority</option>
-                            <option value="high">High Priority</option>
-                            <option value="low">Low Priority</option>
-                        </select>
-                        <select id="categorySelect" class="category-select">
-                            <option value="personal">📝 Personal</option>
-                            <option value="work">💼 Work</option>
-                            <option value="shopping">🛒 Shopping</option>
-                            <option value="health">🏥 Health</option>
-                            <option value="study">📚 Study</option>
-                        </select>
+                        <div class="date-input-container">
+                            <label for="dueDateInput" class="date-label">Due:</label>
+                            <input type="date" id="dueDateInput" class="date-input">
+                        </div>
                     </div>
                     <button id="addTaskBtn" class="add-btn">
                         <span class="add-icon">+</span>
@@ -49,38 +36,29 @@
                 </div>
             </div>
 
-            <!-- Category Filter Section -->
-            <div class="category-filters">
-                <h3>Filter by Category:</h3>
-                <div class="category-filter-buttons">
-                    <button class="category-filter-btn active" data-category="all">
-                        <span class="filter-icon">🔍</span>
-                        All Categories
+            <!-- Due Date Filter Section -->
+            <div class="due-date-filters">
+                <h3>Filter by Due Date:</h3>
+                <div class="due-date-filter-buttons">
+                    <button class="due-date-filter-btn active" data-filter="all">
+                        <span class="filter-icon">📋</span>
+                        All Tasks
                     </button>
-                    <button class="category-filter-btn" data-category="work">
-                        <span class="filter-icon">💼</span>
-                        Work
+                    <button class="due-date-filter-btn" data-filter="due-today">
+                        <span class="filter-icon">📅</span>
+                        Due Today
                     </button>
-                    <button class="category-filter-btn" data-category="personal">
+                    <button class="due-date-filter-btn" data-filter="overdue">
+                        <span class="filter-icon">⚠️</span>
+                        Overdue
+                    </button>
+                    <button class="due-date-filter-btn" data-filter="no-due-date">
                         <span class="filter-icon">📝</span>
-                        Personal
-                    </button>
-                    <button class="category-filter-btn" data-category="shopping">
-                        <span class="filter-icon">🛒</span>
-                        Shopping
-                    </button>
-                    <button class="category-filter-btn" data-category="health">
-                        <span class="filter-icon">🏥</span>
-                        Health
-                    </button>
-                    <button class="category-filter-btn" data-category="study">
-                        <span class="filter-icon">📚</span>
-                        Study
+                        No Due Date
                     </button>
                 </div>
             </div>
 
-            <!-- Task list section -->
             <div class="tasks-section">
                 <div class="tasks-header">
                     <h2>Your Tasks</h2>
@@ -96,7 +74,6 @@
                 </div>
             </div>
 
-            <!-- Statistics section -->
             <div class="stats-section">
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -111,19 +88,23 @@
                         <span class="stat-number" id="pendingTasks">0</span>
                         <span class="stat-label">Pending</span>
                     </div>
-                    <div class="stat-card category-stats">
-                        <span class="stat-number" id="categoriesUsed">0</span>
-                        <span class="stat-label">Categories</span>
+                    <div class="stat-card overdue-stats">
+                        <span class="stat-number" id="overdueTasks">0</span>
+                        <span class="stat-label">Overdue</span>
                     </div>
-                    <div class="stat-card priority-stats">
-                        <span class="stat-number" id="highPriorityTasks">0</span>
-                        <span class="stat-label">High Priority</span>
+                </div>
+
+                <div class="detailed-analytics">
+                    <div class="analytics-section">
+                        <h3>Due Date Overview</h3>
+                        <div id="dueDateStats" class="due-date-stats-list">
+                            <!-- Due date statistics will be populated here -->
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
 
-        <!-- Footer section -->
         <footer class="footer">
             <p>&copy; 2024 TaskFlow. Built with HTML, CSS, and JavaScript.</p>
         </footer>
